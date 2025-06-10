@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sundew.Reactive", "Sundew.Reactive\Sundew.Reactive.csproj", "{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
+		global.json = global.json
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sundew.Reactive.Tests", "Sundew.Reactive.Tests\Sundew.Reactive.Tests.csproj", "{2FD5D3BC-8620-5374-80BC-5D0898D315F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug-Publish|Any CPU = Debug-Publish|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Release-Publish|Any CPU = Release-Publish|Any CPU
+		Release-Stable|Any CPU = Release-Stable|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Debug-Publish|Any CPU.ActiveCfg = Debug-Publish|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Debug-Publish|Any CPU.Build.0 = Debug-Publish|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Release-Publish|Any CPU.ActiveCfg = Release-Publish|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Release-Publish|Any CPU.Build.0 = Release-Publish|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Release-Stable|Any CPU.ActiveCfg = Release-Stable|Any CPU
+		{AEB00BB5-4EA5-9FD4-32F8-17BEA5CEEE5F}.Release-Stable|Any CPU.Build.0 = Release-Stable|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Debug-Publish|Any CPU.ActiveCfg = Debug-Publish|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Debug-Publish|Any CPU.Build.0 = Debug-Publish|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Release-Publish|Any CPU.ActiveCfg = Release-Publish|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Release-Publish|Any CPU.Build.0 = Release-Publish|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Release-Stable|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD5D3BC-8620-5374-80BC-5D0898D315F8}.Release-Stable|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {540639C0-E8B9-491D-9E6B-6EF4AFC860C7}
+	EndGlobalSection
+EndGlobal
