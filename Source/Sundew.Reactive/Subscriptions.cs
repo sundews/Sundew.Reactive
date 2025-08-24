@@ -8,6 +8,7 @@
 namespace Sundew.Reactive;
 
 using System;
+using Sundew.Base.Collections.Concurrent;
 
 /// <summary>
 /// Contains subscriptions for reactions.

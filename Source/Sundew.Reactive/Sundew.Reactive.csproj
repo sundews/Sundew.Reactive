@@ -28,7 +28,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Sundew.Base.Primitives" Version="15.0.0-u20250610-040721-ci" />
+    <PackageReference Include="Sundew.Base.Collections.Primitives" Version="15.0.0-u20250815-095250-ci" />
     <PackageReference Include="Sundew.DiscriminatedUnions" Version="5.3.8" />
     <PackageReference Include="Sundew.Packaging.Publish" Version="10.0.10-u20250427-204945-ci">
       <PrivateAssets>all</PrivateAssets>

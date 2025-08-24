@@ -12,10 +12,13 @@ using System;
 using System.Reactive.Subjects;
 using System.Threading;
 using System.Threading.Tasks;
+using AwesomeAssertions;
+using NUnit.Framework;
+using Sundew.Base.Threading;
 
 public class ReactionsTests
 {
-    [Fact]
+    [Test]
     public async Task Subscribe_WhenEventRaised_Then_EventShouldBeReceived()
     {
         var eventSource = new EventSource();
@@ -28,7 +31,7 @@ public class ReactionsTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    [Test]
     public async Task Target_UnsubscribeAll_WhenEventRaised_Then_EventShouldNotBeReceived()
     {
         var eventSource = new EventSource();
@@ -42,7 +45,7 @@ public class ReactionsTests
         result.Should().BeFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task Source_UnsubscribeAll_WhenEventRaised_Then_EventShouldNotBeReceived()
     {
         var eventSource = new EventSource();
@@ -56,7 +59,7 @@ public class ReactionsTests
         result.Should().BeFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task SourceAndTarget_UnsubscribeAll_WhenEventRaised_Then_EventShouldNotBeReceived()
     {
         var eventSource = new EventSource();
