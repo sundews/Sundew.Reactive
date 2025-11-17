@@ -1,11 +1,11 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ObservableCacheExtensionsTests.cs" company="Sundews">
+// <copyright file="ObservableListExtensionsTests.cs" company="Sundews">
 // Copyright (c) Sundews. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Sundew.Reactive.Tests;
+namespace Sundew.Reactive.Development.Tests;
 
 using System;
 using System.Threading.Tasks;
@@ -15,22 +15,22 @@ using NUnit.Framework;
 using Sundew.Base;
 
 [TestFixture]
-public class ObservableCacheExtensionsTests
+public class ObservableListExtensionsTests
 {
     [Test]
-    public async Task MatchAsync_When_CacheAlreadyFulfillsPredicate_Then_ResultIsExpectedResult()
+    public async Task MatchAsync_When_ListAlreadyFulfillsPredicate_Then_ResultIsExpectedResult()
     {
-        var sourceCache = new SourceCache<string, int>(x => x.Length);
-        sourceCache.Edit(x => x.AddOrUpdate("1"));
-        sourceCache.Edit(x => x.AddOrUpdate("22"));
-        sourceCache.Edit(x => x.AddOrUpdate("333"));
+        var sourceList = new SourceList<int>();
+        sourceList.Add(1);
+        sourceList.Add(2);
+        sourceList.Add(3);
 
-        var resultTask = sourceCache.MatchAsync(cache =>
+        var resultTask = sourceList.MatchAsync(list =>
         {
-            return cache switch
+            return list switch
             {
                 [var first, var second, ..] => R.Success((first, second)),
-                _ => R.Error().Omits<(string, string)>(),
+                _ => R.Error().Omits<(int, int)>(),
             };
         });
 
@@ -39,53 +39,52 @@ public class ObservableCacheExtensionsTests
         using (Assert.EnterMultipleScope())
         {
             result.IsSuccess.Should().BeTrue();
-            result.Value.Should().Be(("1", "22"));
+            result.Value.Should().Be((1, 2));
         }
     }
 
     [Test]
     public async Task MatchAsync_When_PredicateSucceeds_Then_ResultIsExpectedResult()
     {
-        var sourceCache = new SourceCache<string, int>(x => x.Length);
+        var sourceList = new SourceList<int>();
 
-        var resultTask = sourceCache.MatchAsync(cache =>
+        var resultTask = sourceList.MatchAsync(list =>
         {
-            return cache switch
+            return list switch
             {
                 [var first, var second, ..] => R.Success((first, second)),
-                _ => R.Error().Omits<(string, string)>(),
+                _ => R.Error().Omits<(int, int)>(),
             };
         });
-        sourceCache.Edit(x => x.AddOrUpdate("1"));
-        sourceCache.Edit(x => x.AddOrUpdate("22"));
-        sourceCache.Edit(x => x.AddOrUpdate("333"));
+        sourceList.Add(1);
+        sourceList.Add(2);
+        sourceList.Add(3);
 
         var result = await resultTask;
 
         using (Assert.EnterMultipleScope())
         {
             result.IsSuccess.Should().BeTrue();
-            result.Value.Should().Be(("1", "22"));
+            result.Value.Should().Be((1, 2));
         }
     }
 
     [Test]
     public async Task MatchAsync_When_PredicateNeverSucceeds_Then_ResultIsTimeout()
     {
-        var sourceCache = new SourceCache<string, int>(x => x.Length);
+        var sourceList = new SourceList<int>();
 
-        var resultTask = sourceCache.MatchAsync(
-            cache =>
+        var resultTask = sourceList.MatchAsync(
+            list =>
             {
-                return cache switch
+                return list switch
                 {
                     [var first, var second] => R.Success((first, second)),
-                    _ => R.Error().Omits<(string, string)>(),
+                    _ => R.Error().Omits<(int, int)>(),
                 };
             },
             new Cancellation(TimeSpan.FromMilliseconds(50)));
-
-        sourceCache.Edit(x => x.AddOrUpdate("1"));
+        sourceList.Add(1);
 
         var result = await resultTask;
 

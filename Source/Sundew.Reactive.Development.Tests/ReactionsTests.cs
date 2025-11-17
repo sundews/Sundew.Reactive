@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 #pragma warning disable SA1402
-namespace Sundew.Reactive.Tests;
+namespace Sundew.Reactive.Development.Tests;
 
 using System;
 using System.Reactive.Subjects;

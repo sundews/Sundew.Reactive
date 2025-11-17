@@ -16,7 +16,7 @@ jobs:
     name: .NET
     runs-on: ubuntu-latest
     env:
-      solutionPath: ./Source/Sundew.Reactive.sln
+      solutionPath: ./Source/Sundew.Reactive.slnx
       versioningProjectPath: ./Source/Sundew.Reactive/Sundew.Reactive.csproj
       repository: 'https://sundew-dev:${{ secrets.SUNDEW_DEV_TOKEN }}@github.com/sundews/Sundew.Reactive.git'
       source: 'https://api.nuget.org/v3/index.json'
@@ -28,11 +28,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Setup .NET preview
+    - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.x.x
-        dotnet-quality: preview
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
