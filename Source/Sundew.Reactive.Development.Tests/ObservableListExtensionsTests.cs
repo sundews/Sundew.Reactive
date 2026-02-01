@@ -10,11 +10,11 @@ namespace Sundew.Reactive.Development.Tests;
 using System;
 using System.Threading.Tasks;
 using AwesomeAssertions;
+using AwesomeAssertions.Execution;
 using DynamicData;
-using NUnit.Framework;
 using Sundew.Base;
+using TUnit.Core;
 
-[TestFixture]
 public class ObservableListExtensionsTests
 {
     [Test]
@@ -36,7 +36,7 @@ public class ObservableListExtensionsTests
 
         var result = await resultTask;
 
-        using (Assert.EnterMultipleScope())
+        using (new AssertionScope())
         {
             result.IsSuccess.Should().BeTrue();
             result.Value.Should().Be((1, 2));
@@ -62,7 +62,7 @@ public class ObservableListExtensionsTests
 
         var result = await resultTask;
 
-        using (Assert.EnterMultipleScope())
+        using (new AssertionScope())
         {
             result.IsSuccess.Should().BeTrue();
             result.Value.Should().Be((1, 2));
@@ -88,7 +88,7 @@ public class ObservableListExtensionsTests
 
         var result = await resultTask;
 
-        using (Assert.EnterMultipleScope())
+        using (new AssertionScope())
         {
             result.IsSuccess.Should().BeFalse();
             result.Error.Should().Be(Failure<MatchFailure>._Canceled(CancelReason.Timeout));

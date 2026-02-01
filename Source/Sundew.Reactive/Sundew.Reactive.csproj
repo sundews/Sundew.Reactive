@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="DynamicData" />
+    <PackageReference Include="Sundew.Base.Collections" />
     <PackageReference Include="Sundew.Base.Collections.Primitives" />
     <PackageReference Include="Sundew.DiscriminatedUnions" />
   </ItemGroup>

@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Threading" />
+    <PackageReference Include="Sundew.Base.Collections" />
+    <PackageReference Include="Sundew.Base.Collections.Linq" />
     <PackageReference Include="Sundew.Base.Threading" />
     <PackageReference Include="Sundew.DiscriminatedUnions" />
     <PackageReference Include="System.Security.Permissions" />

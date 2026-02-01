@@ -10,11 +10,10 @@ namespace Sundew.Reactive.Development.Tests;
 using System;
 using System.Threading.Tasks;
 using AwesomeAssertions;
+using AwesomeAssertions.Execution;
 using DynamicData;
-using NUnit.Framework;
 using Sundew.Base;
 
-[TestFixture]
 public class ObservableCacheExtensionsTests
 {
     [Test]
@@ -36,7 +35,7 @@ public class ObservableCacheExtensionsTests
 
         var result = await resultTask;
 
-        using (Assert.EnterMultipleScope())
+        using (new AssertionScope())
         {
             result.IsSuccess.Should().BeTrue();
             result.Value.Should().Be(("1", "22"));
@@ -62,7 +61,7 @@ public class ObservableCacheExtensionsTests
 
         var result = await resultTask;
 
-        using (Assert.EnterMultipleScope())
+        using (new AssertionScope())
         {
             result.IsSuccess.Should().BeTrue();
             result.Value.Should().Be(("1", "22"));
@@ -89,7 +88,7 @@ public class ObservableCacheExtensionsTests
 
         var result = await resultTask;
 
-        using (Assert.EnterMultipleScope())
+        using (new AssertionScope())
         {
             result.IsSuccess.Should().BeFalse();
             result.Error.Should().Be(Failure<MatchFailure>._Canceled(CancelReason.Timeout));

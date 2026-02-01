@@ -43,8 +43,7 @@
     <PackageReference Include="AwesomeAssertions" />
     <PackageReference Include="coverlet.collector" />
     <PackageReference Include="JustMock" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
-    <PackageReference Include="NUnit" />
+    <PackageReference Include="TUnit" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(IsPackable)' == 'true'">
